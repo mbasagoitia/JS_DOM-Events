@@ -48,7 +48,7 @@ const unorderedList = document.createElement("ul");
 // TODO: Iterate over the array values, and create a list item element for each
 for (let item of list) {
     let li = document.createElement("li");
-    li.innerText = item;
+    li.textContent = item;
     unorderedList.appendChild(li);
 }
 // TODO: Append the new list items to the unordered list element
@@ -71,9 +71,9 @@ function show() {
     const modal = document.createElement("div");
     modal.classList.add("modal");
     modal.classList.add("modal-card");
-    modal.innerText = "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user";
+    modal.textContent = "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user";
     const closeButton = document.createElement("button");
-    closeButton.innerText = "Close the modal";
+    closeButton.textContent = "Close the modal";
     modal.appendChild(closeButton);
     closeButton.addEventListener("click", () => {
         body.removeChild(modal);
@@ -81,7 +81,5 @@ function show() {
     body.appendChild(modal);
 }
 
-button.addEventListener("click", () => {
-    show();
-});
+button.addEventListener("click", show);
 
